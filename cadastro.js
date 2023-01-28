@@ -103,11 +103,15 @@ function cadastrar(){
         localStorage.setItem('listaUser', JSON.stringify(listaUser))
 
         msgSuccess.setAttribute('style', 'display:block')
-        msgSuccess.innerHTML = '<strong>Cadastrado com sucesso</strong>'
+        msgSuccess.innerHTML = '<strong>Cadastrando usuário...</strong>'
         msgError.setAttribute('style', 'display:none')
         msgError.innerHTML = ''
 
-        window.location.href = ''
+
+        setTimeout(() => {
+            window.location.href = 'http://127.0.0.1:5500/index.html'
+        }, 3000)
+        
     }
     else{
         msgError.setAttribute('style', 'display:block')
