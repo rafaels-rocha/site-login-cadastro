@@ -122,4 +122,23 @@ button:hover{
     color: #25215c;
 }
 
+#msgError{
+    text-align: center;
+    color: #ff0000;
+    background-color: #ff7777;
+    padding: 10px;
+    border-radius: 4px;
+    display: none;
+
+}
+
+#msgSuccess{
+    text-align: center;
+    color: black;
+    background-color: #c8f5d6;
+    padding: 10px;
+    border-radius: 4px;
+    display: none;
+    
+}
 

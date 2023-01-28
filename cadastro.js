@@ -17,6 +17,10 @@ let confirmeSenha = document.querySelector('#confirmeSenha')
 let labelConfirmeSenha = document.querySelector('#labelConfirmeSenha')
 let validConfirmeSenha = false
 
+let msgError = document.querySelector('#msgError')
+let msgSuccess = document.querySelector('#msgSuccess')
+
+
 nome.addEventListener('keyup', () => {
     if(nome.value.length <= 3) {
         labelNome.setAttribute('style', 'color: red')
@@ -83,11 +87,33 @@ confirmeSenha.addEventListener('keyup', () => {
 
 
 function cadastrar(){
-    if(validNome && validUsuario && validSenha && validConfirmeSenha){
-        alert('Tudo ok pae')
+    if(validNome && validUsuario && validSenha && validConfirmeSenha)
+    {   
+        let listaUser = JSON.parse(localStorage.getItem('listaUser') || '[]')
+
+        listaUser.push(
+            {
+                nomeCad:nome.value,
+                userCad:usuario.value,
+                senhaCad:senha.value,
+
+            }
+        )
+
+        localStorage.setItem('listaUser', JSON.stringify(listaUser))
+
+        msgSuccess.setAttribute('style', 'display:block')
+        msgSuccess.innerHTML = '<strong>Cadastrado com sucesso</strong>'
+        msgError.setAttribute('style', 'display:none')
+        msgError.innerHTML = ''
+
+        window.location.href = ''
     }
     else{
-        alert('Ta tudo errado')
+        msgError.setAttribute('style', 'display:block')
+        msgError.innerHTML = '<strong> Preencha Corretamente<strong/>'
+        msgSuccess.setAttribute('style', 'display:none')
+        msgSuccess.innerHTML = ''
     }
 }
 
