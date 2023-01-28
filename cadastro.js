@@ -109,7 +109,7 @@ function cadastrar(){
 
 
         setTimeout(() => {
-            window.location.href = 'http://127.0.0.1:5500/index.html'
+            window.location.href = 'https://rafaels-rocha.github.io/site-login-cadastro/'
         }, 3000)
         
     }
